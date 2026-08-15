@@ -180,7 +180,7 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; font-weight: 800; }
   background-clip: text;
   color: transparent;
 }
-.hero-stats span { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; max-width: 12rem; font-weight: 500; }
+.hero-stats span { display: block; font-size: 0.82rem; color: var(--muted); margin: 0.3rem auto 0; max-width: 12rem; font-weight: 500; }
 
 /* Buttons */
 .btn {
@@ -357,7 +357,7 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; font-weight: 800; }
 }
 .section-cta .section-inner { position: relative; z-index: 1; }
 .section-cta .eyebrow { color: #a5b4fc; }
-.section-cta h2 { color: #fff; }
+.section-cta h2 { color: #fff; margin-left: auto; margin-right: auto; }
 .contact-inner { text-align: center; }
 .contact-inner .section-lead { color: #b7bdd6; margin-left: auto; margin-right: auto; }
 .contact-links { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
