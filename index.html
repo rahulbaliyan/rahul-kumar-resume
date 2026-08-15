@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rahul Kumar — Principal Engineer &amp; Backend Architecture Consultant</title>
 <meta name="description" content="Rahul Kumar — Principal Engineer, Python backend &amp; cloud architecture consultant. 9+ years building enterprise backend systems, cloud platforms, and data pipelines on AWS and Azure.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233654f4'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,8 +32,10 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero reveal">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-inner">
+      <span class="hero-badge"><i></i>Available for select consulting engagements</span>
       <p class="eyebrow">Principal Engineer &middot; Backend &amp; Cloud Architecture Consultant</p>
       <h1>I help engineering teams build backend systems and cloud platforms that hold up at scale.</h1>
       <p class="hero-lead">9+ years designing Python backend systems, cloud-native architecture, and data/observability pipelines for enterprise and financial platforms — currently leading engineering at Amtex Systems, and available for focused consulting engagements.</p>
@@ -45,7 +51,7 @@
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section reveal" id="about">
     <div class="section-inner">
       <p class="eyebrow">About</p>
       <h2>Backend engineering leadership, grounded in hands-on architecture.</h2>
@@ -68,7 +74,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="services">
+  <section class="section reveal section-alt" id="services">
     <div class="section-inner">
       <p class="eyebrow">Services</p>
       <h2>Where I can help, as a consulting engagement.</h2>
@@ -120,7 +126,7 @@
     </div>
   </section>
 
-  <section class="section" id="projects">
+  <section class="section reveal" id="projects">
     <div class="section-inner">
       <p class="eyebrow">Project Work</p>
       <h2>What I've built, and how.</h2>
@@ -220,7 +226,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="experience">
+  <section class="section reveal section-alt" id="experience">
     <div class="section-inner">
       <p class="eyebrow">Experience</p>
       <h2>Career timeline.</h2>
@@ -261,7 +267,7 @@
     </div>
   </section>
 
-  <section class="section" id="skills">
+  <section class="section reveal" id="skills">
     <div class="section-inner">
       <p class="eyebrow">Skills</p>
       <h2>Tools of the trade.</h2>
@@ -290,7 +296,7 @@
     </div>
   </section>
 
-  <section class="section section-cta" id="contact">
+  <section class="section reveal section-cta" id="contact">
     <div class="section-inner contact-inner">
       <p class="eyebrow">Get in Touch</p>
       <h2>Have a backend, cloud, or engineering-leadership problem worth a conversation?</h2>
@@ -306,7 +312,7 @@
 </main>
 
 <footer class="footer">
-  <p>&copy; <span id="year"></span> Rahul Kumar. Built and deployed with a little help from Claude Code.</p>
+  <p>&copy; <span id="year"></span> Rahul Kumar.</p>
 </footer>
 
 <script>
@@ -323,6 +329,21 @@
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  const revealTargets = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealTargets.forEach(el => observer.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('in-view'));
+  }
 </script>
 
 </body>
